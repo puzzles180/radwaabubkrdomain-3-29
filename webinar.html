@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Free Webinar Registration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Tajawal', sans-serif;
+}
+
+body{
+  margin:0;
+  background:#fff;
+  color:#111;
+}
+
+/* ================= SECTION ================= */
+.webinar-form-section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  padding:20px;
+}
+
+/* ================= ORANGE LINES BACKGROUND ================= */
+.lines-bg{
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,140,0,0.08) 0px,
+      rgba(255,140,0,0.08) 1px,
+      transparent 1px,
+      transparent 14px
+    );
+  animation: bgMove 12s linear infinite;
+  z-index:1;
+}
+
+@keyframes bgMove{
+  from{background-position:0 0;}
+  to{background-position:500px 500px;}
+}
+
+/* ================= FORM CARD ================= */
+.webinar-form-box{
+  position:relative;
+  z-index:2;
+  background:#fff;
+  width:100%;
+  max-width:430px;
+  padding:48px 38px;
+  border-radius:26px;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.12),
+    inset 0 0 0 1px rgba(255,140,0,0.15);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.webinar-form-box h2{
+  margin:0;
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:0.3px;
+}
+
+.webinar-form-box p{
+  margin:12px 0 34px;
+  font-size:15px;
+  color:#666;
+}
+
+/* ================= INPUTS ================= */
+.input-group{
+  position:relative;
+  margin-bottom:24px;
+}
+
+.input-group input{
+  width:100%;
+  padding:15px 14px;
+  border-radius:14px;
+  border:1px solid #e5e5e5;
+  outline:none;
+  font-size:15px;
+  transition:0.3s;
+}
+
+.input-group input:focus{
+  border-color:#ff8c00;
+  box-shadow:0 0 0 3px rgba(255,140,0,0.15);
+}
+
+.input-group label{
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  background:#fff;
+  padding:0 6px;
+  color:#999;
+  font-size:14px;
+  pointer-events:none;
+  transition:0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label{
+  top:-8px;
+  font-size:12px;
+  color:#ff8c00;
+}
+
+/* ================= BUTTON ================= */
+.webinar-form-box button{
+  width:100%;
+  border:none;
+  padding:16px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#ff8c00,#ffb347);
+  color:#fff;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.webinar-form-box button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(255,140,0,0.35);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:480px){
+  .webinar-form-box{
+    padding:36px 24px;
+  }
+  .webinar-form-box h2{
+    font-size:24px;
+  }
+}
+.back-home-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 28px;
+  border-radius:50px;
+  background:#fff;
+  color:#111;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  border:1px solid #eee;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s ease;
+  font-family:'Tajawal', sans-serif;
+}
+
+.back-home-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(0,0,0,0.15);
+  background:#ff8c00;
+  color:#fff;
+  border-color:#ff8c00;
+}
+
+</style>
+</head>
+
+<body>
+<a href="index.html" class="back-home-btn">
+  ← الرجوع إلى الصفحة الرئيسية
+</a>
+
+<section class="webinar-form-section">
+
+  <div class="lines-bg"></div>
+
+  <div class="webinar-form-box">
+    <h2>التسجيل في الويبنار المجاني</h2>
+    <p>سجّل بياناتك وسيتم التواصل معك قبل بدء الويبنار</p>
+
+    <form action="https://formspree.io/f/mykzoqkj" method="POST">
+
+      <div class="input-group">
+        <input type="text" name="name" required>
+        <label>الاسم الكامل</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" required>
+        <label>البريد الإلكتروني</label>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" name="phone">
+        <label>رقم الهاتف</label>
+      </div>
+
+      <button type="submit">تأكيد التسجيل</button>
+
+    </form>
+  </div>
+
+</section>
+
+</body>
+</html>

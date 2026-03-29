@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ورشة ارت كونكشن</title>
+    <link rel="icon" href="image copy 2.png" type="image/png" sizes="64x64"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* orange background lines */
+.bg-lines {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='800' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 150 C200 50 400 250 800 150' stroke='%23f3a15f' fill='none'/%3E%3Cpath d='M0 350 C200 250 400 450 800 350' stroke='%23f3a15f' fill='none'/%3E%3Cpath d='M0 550 C200 450 400 650 800 550' stroke='%23f3a15f' fill='none'/%3E%3C/svg%3E");
+  opacity: 0.25;
+  z-index: -1;
+}
+
+/* card */
+.workshop-card {
+  max-width: 850px;
+  margin: 90px auto;
+  padding: 55px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.4s;
+}
+
+.workshop-card:hover {
+  transform: translateY(-6px);
+}
+
+/* logo */
+.logo img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* headings */
+h1 {
+  color: #f28c28;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.intro {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.points {
+  text-align: right;
+  margin: 30px 0;
+}
+
+.points li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+/* details */
+.details p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+/* button */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 38px;
+  background: #f28c28;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #db7415;
+  transform: scale(1.05);
+}
+
+/* animation */
+.fade-up {
+  animation: fadeUp 1.1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.back-home-btn {
+  position: relative;
+  display: inline-block;
+  padding: 14px 34px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #ff7a18, #ff9f1c);
+  border-radius: 40px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Hover */
+.back-home-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255,122,24,0.45);
+}
+
+/* Shine effect */
+.back-home-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.55),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.back-home-btn:hover::before {
+  animation: shine 0.9s ease;
+}
+
+@keyframes shine {
+  from { left: -80%; }
+  to { left: 130%; }
+}
+
+</style>
+<a href="index.html" class="back-home-btn">
+  <span>الرجوع للصفحة الرئيسية</span>
+</a>
+  <div class="bg-lines"></div>
+
+  <section class="workshop-card fade-up">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="image copy 2.png" alt="Logo">
+    </div>
+
+    <h1>ورشة ارت كونكشن</h1>
+    <h2>🧡 Art Connection Workshop</h2>
+
+    <p class="intro">
+      ورشة عميقة لفهم العلاقات الإنسانية وبناء تواصل صحي وآمن  
+      من خلال الوعي، الفن، والتجربة العملية.
+    </p>
+
+    <ul class="points">
+      <li>فهم الأدوار داخل العلاقات وتأثيرها النفسي</li>
+      <li>بناء حدود آمنة وصحية بدون ذنب</li>
+      <li>مخاطر تبادل الأدوار في العلاقات</li>
+      <li>التعامل الواعي مع العلاقات الصحية</li>
+      <li>خلق علاقات متوازنة تحسّن جودة حياتك</li>
+      <li>ربط الوعي العاطفي بالاستقرار النفسي</li>
+      <li>تمارين تطبيقية للفهم والوعي الذاتي</li>
+    </ul>
+
+    <div class="details">
+      <p><strong>Duration:</strong> 2 consecutive days</p>
+      <p><strong>Hours:</strong> 4 hours each day</p>
+      <p><strong>Platform:</strong> Online via Zoom</p>
+      <p><strong>Certificate:</strong> Attendance certificate from the trainer</p>
+    </div>
+
+    <a href="" class="btn">احجز مكانك الآن</a>
+
+  </section>
+
+</body>
+</html>

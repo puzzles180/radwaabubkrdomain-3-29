@@ -1,0 +1,208 @@
+   <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ورشة ألوان الود</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image copy 9.png" type="image/png" sizes="64x64">
+
+</head>
+<body>
+<style>body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* pink background lines */
+.bg-lines {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='800' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 120 C200 40 400 220 800 120' stroke='%23f5a3c7' fill='none'/%3E%3Cpath d='M0 300 C200 200 400 420 800 300' stroke='%23f5a3c7' fill='none'/%3E%3Cpath d='M0 500 C200 420 400 620 800 500' stroke='%23f5a3c7' fill='none'/%3E%3C/svg%3E");
+  opacity: 0.25;
+  z-index: -1;
+}
+
+/* card */
+.workshop-card {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 50px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* logo */
+.logo img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* text */
+h1 {
+  color: #e66aa6;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.points {
+  text-align: right;
+  margin: 30px 0;
+}
+
+.points li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.details p {
+  margin: 6px 0;
+}
+
+.price {
+  margin: 25px 0;
+  font-size: 18px;
+}
+
+/* button */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 35px;
+  background: #e66aa6;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #d25592;
+  transform: translateY(-3px);
+}
+
+/* animation */
+.fade-up {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.back-home-btn {
+  position: relative;
+  display: inline-block;
+  padding: 14px 34px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #d25592, #e66aa6);
+  border-radius: 40px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Hover */
+.back-home-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px #e66aa6);
+}
+
+/* Shine effect */
+.back-home-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.55),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.back-home-btn:hover::before {
+  animation: shine 0.9s ease;
+}
+
+@keyframes shine {
+  from { left: -80%; }
+  to { left: 130%; }
+}
+
+</style>
+<a href="index.html" class="back-home-btn">
+  <span>الرجوع للصفحة الرئيسية</span>
+</a>
+  <!-- background lines -->
+  <div class="bg-lines"></div>
+
+  <section class="workshop-card fade-up">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="image copy 9.png" alt="Logo">
+    </div>
+
+    <h1>ألوان الود – One Day Retreat 💕</h1>
+
+    <h2>✨ Art Therapy Workshop ✨</h2>
+
+    <p class="intro">
+      وتمارين التوازن الذاتي علشان ترجعي لنفسك  
+      وتفعّلي طاقة الوفرة في حياتك
+    </p>
+
+    <ul class="points">
+      <li>عمل Vision Board لسنة 2026 بطريقة تناسب كل شخص</li>
+      <li>تحديد الأهداف بوضوح ووعي</li>
+      <li>تحويل الرؤية لخطة واقعية قابلة للتنفيذ</li>
+      <li>ربط الأهداف بالمشاعر والطاقة الصح</li>
+      <li>فهم علاقتنا بالمال وتأثير المعتقدات على الدخل</li>
+      <li>الإدارة الواعية (الوقت – الطاقة – المال)</li>
+      <li>التوازن بين النجاح المادي والراحة النفسية</li>
+      <li>جلسة عملية + توجيه بخطة واضحة للسنة الجديدة</li>
+    </ul>
+
+    <div class="details">
+      <p><strong>Date:</strong> Saturday, 17 Jan</p>
+      <p><strong>Time:</strong> From 10 am to 4 pm</p>
+      <p><strong>Location:</strong> فندق Le Méridien Cairo Airport</p>
+    </div>
+
+    <div class="price">
+      <p>💗 Price: <strong>2,800 EGP</strong></p>
+      <span>يشمل Coffee break + Parking + تذكرة بوابة المطار</span>
+    </div>
+
+    <a href="https://wa.me/201012147242?text=السلام%20عليكم%20لو%20سمحت%20عايز%20استفسر%20عن%20كورس%20ألوان%20الود%20ومحتواه%20ومعاد%20البدء" class="btn">احجزي مكانك دلوقتي</a>
+
+  </section>
+
+</body>
+</html>

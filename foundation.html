@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>دبلومة العلاج بالفن</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="غخغخغ-removebg-preview.png" type="image/png" sizes="64x64"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+    body {
+      margin: 0;
+      background-color: #fffaf3;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .logo {
+      display: block;
+      max-width: 180px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #e67e22;
+      font-size: 28px;
+      margin-top: 15px;
+    }
+    p, li {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .section-title {
+      color: #d35400;
+      margin-top: 25px;
+      font-size: 20px;
+    }
+    ul { padding-right: 25px; }
+
+    .btn-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .btn {
+      background-color: #e67e22;
+      color: white;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #d35400;
+    }
+
+    form {
+      margin-top: 30px;
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    form button {
+      background: #e67e22;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    form button:hover {
+      background: #d35400;
+    }
+
+    .reviews {
+      background: #fff8ee;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+    .review {
+      border-right: 4px solid #f39c12;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      background: #fff;
+      border-radius: 6px;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff3e0;
+      margin-top: 50px;
+    }
+    .footer-logo {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 22px;
+      color: #e67e22;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: #d35400;
+    }
+    .reviews-slider {
+  background: #fff8ee;
+  padding: 30px 20px;
+  border-radius: 10px;
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.slider-container {
+  position: relative;
+  height: 230px;
+}
+.slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.slide.active {
+  opacity: 1;
+}
+.slide img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e67e22;
+  margin-bottom: 15px;
+  background-color: #eee;
+}
+.slide p {
+  font-size: 17px;
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.6;
+  color: #333;
+}
+.back-home-btn {
+  position: relative;
+  display: inline-block;
+  padding: 14px 34px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #ff7a18, #ff9f1c);
+  border-radius: 40px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Hover */
+.back-home-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255,122,24,0.45);
+}
+
+/* Shine effect */
+.back-home-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.55),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.back-home-btn:hover::before {
+  animation: shine 0.9s ease;
+}
+
+@keyframes shine {
+  from { left: -80%; }
+  to { left: 130%; }
+}
+
+  </style>
+</head>
+<body>
+<a href="index.html" class="back-home-btn">
+  <span>الرجوع للصفحة الرئيسية</span>
+</a>
+
+ <div class="container">
+  <img src="https://i.postimg.cc/J4SnXsqv/images-2.png" alt="Logo" class="logo" />
+  <h1>دبلومة العلاج بالفن</h1>
+
+
+  <p style="font-size: 20px; margin-top: 10px; line-height: 1.8;">
+    💡 رحلة شفاء واكتشاف ذات حقيقية…  
+    لو بتدور على طريقة تعبر بيها عن مشاعرك، وتفهم نفسك بعمق، وتحقق توازن نفسي من خلال أدوات فنية وعلمية – فأنت في المكان الصح.
+  </p>
+
+  <img src="https://i.postimg.cc/N0fQ8Gmq/Whats-App-Image-2025-07-06-at-02-26-17-ac913c08.jpg" alt="مدربة الدبلومة" style="width: 130px; border-radius: 50%; margin: 20px auto; display: block; border: 3px solid #e67e22;" />
+  <p style="text-align:center; margin-bottom:30px; color:#e67e22; font-weight:bold;">المدربة: رضوى أبو بكر</p>
+
+  <p class="section-title">ليه العلاج بالفن؟</p>
+  <p>
+    العلاج بالفن مش مجرد رسم… ده وسيلة عميقة لفهم الذات، تفريغ الضغط، والوصول للسلام النفسي.  
+    من خلال الدبلومة دي، هتكتشف إزاي تستخدم الفن كوسيلة علاجية ليك ولغيرك، بأسلوب بسيط لكنه فعّال جدًا.
+  </p>
+
+  <p class="section-title">محتوى الدبلومة:</p>
+  <ul>
+    <li><strong>الجزء النظري:</strong>
+      <ul>
+        <li>الفرق بين الوعي والإدراك</li>
+        <li>مراحل تطور وعي الأفراد والمجتمعات</li>
+        <li>النظام النفسي: الجسد، العقل، القلب، الروح</li>
+        <li>مدارس العلاج بالألوان وعلاقتها بالعلاج بالفن</li>
+        <li>أنواع الصدمات وتأثيرها على الجهاز العصبي</li>
+      </ul>
+    </li>
+    <li><strong>الجزء الفني:</strong>
+      <ul>
+        <li>أدوات وتقنيات العلاج بالفن</li>
+        <li>كيفية تنفيذ جلسة وكتابة تقريرها</li>
+        <li>تحليل الأعمال الفنية كوسيلة لفهم المشاعر</li>
+      </ul>
+    </li>
+    <li><strong>الجزء التطبيقي:</strong>
+      <ul>
+        <li>أكثر من 11 تقنية علاج بالفن</li>
+        <li>محاضرات إشراف عملي وتغذية راجعة من المدربة</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p class="section-title">لمن هذه الدبلومة؟</p>
+  <ul>
+    <li>لكل شخص حابب يفهم نفسه ويشتغل على توازنه النفسي</li>
+    <li>للمهتمين بالصحة النفسية والتنمية الذاتية</li>
+    <li>للأمهات والمعالجين والمدربين التربويين</li>
+    <li>لأي حد بيدوّر على وسيلة جديدة للتعبير والتفريغ</li>
+  </ul>
+
+  <p class="section-title">إيه اللي هتخرج بيه بعد الدبلومة؟</p>
+  <ul>
+    <li>وعي أعمق بنفسك وبتاريخك العاطفي</li>
+    <li>مجموعة أدوات فنية وعلمية للتعامل مع المشاعر</li>
+    <li>شهادة حضور موثقة من البوردالمصري </li>
+    <li>ثقة إنك تقدر تساعد نفسك واللي حواليك</li>
+  </ul>
+
+  <p class="section-title">مميزات دبلومتنا:</p>
+  <ul>
+    <li>مدربة بخبرة حقيقية في المجال العلاجي والفني</li>
+    <li>مجتمع داعم ومتابعة مستمرة خلال التدريب</li>
+    <li>ملفات PDF، تسجيلات، وجلسات مباشرة</li>
+    <li>محتوى مدموج بين النظري والعملي – تقدر تطبقه فورًا</li>
+  </ul>
+
+  <p class="section-title">طريقة التدريب:</p>
+  <ul>
+    <li>محاضرات مباشرة عبر زووم + تسجيلات للرجوع</li>
+    <li>تطبيق عملي بعد كل محاضرة</li>
+    <li>دعم فني ونفسي طول فترة الدراسة</li>
+    <li>جلسات أسئلة ومراجعة دورية</li>
+  </ul>
+
+  <p style="font-size: 20px; margin-top: 30px;">
+    ✨ لو عندك شغف بالفن… أو بتدور على طريق للشفاء…  
+    أو حتى نفسك تساعد غيرك لكن مش عارف تبدأ منين —  
+    <strong>الدبلومة دي هتفتح لك أبواب كتير جدًا</strong>.
+  </p>
+<div style="text-align: center; margin-top: 50px;">
+  <h2 style="color: #e67e22; margin-bottom: 10px;">🔖 شهادة معتمدة من البورد المصري للعلاج بالفن</h2>
+  <img src="https://i.postimg.cc/mgxk0p6X/Screenshot-2025-07-06-163745.png" alt="شهادة البورد المصري" style="max-width: 90%; border: 4px solid #e67e22; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+</div>
+
+  <p style="font-size: 18px; font-weight: bold; color: #e67e22;">عدد الأماكن محدود جدًا – احجز مكانك قبل اكتمال العدد 🎯</p>
+
+  <div class="btn-container">
+    <a href="https://wa.me/201012147242" class="btn" target="_blank">راسلنا على واتساب</a>
+    
+  </div>
+</div>
+
+<p style="text-align: center; font-size: 16px; color: #e67e22;">
+الدبلومة مكونة من 12 محاضرة – على مدار 3 شهور  
+<br>
+كل محاضرة مدتها 4 ساعات – تدريب نظري وعملي مباشر ✨
+</p>
+<div style="text-align: center; margin-top: 30px;">
+  <a href="schedule.html" 
+     target="_blank" 
+     class="btn" 
+     style="background-color: #f39c12; color: white; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    📆 اضغط هنا لعرض المواعيد 
+  </a>
+</div>
+
+
+    <form action="https://formspree.io/f/mldnwrwk" method="POST">
+      <h2 style="color:#e67e22">سجل اهتمامك الآن</h2>
+      <input type="text" name="name" placeholder="الاسم بالكامل" required>
+      <input type="tel" name="phone" placeholder="رقم الموبايل" required>
+      <select name="preferred_time" required>
+        <option value="" disabled selected>اختر الوقت المناسب للاتصال</option>
+        <option>صباحًا</option>
+        <option>ظهرًا</option>
+        <option>مساءً</option>
+      </select>
+      <button type="submit">إرسال</button>
+    </form>
+
+    <div class="reviews-slider">
+  <h2 class="section-title">آراء المتادربين</h2>
+  <div class="slider-container">
+    <div class="slide active">
+      <img src="https://i.postimg.cc/RFVwCRzr/Screenshot-2025-07-06-014206.png" alt="User" />
+      <p>"جد الدبلومة كانت نقطة تحول كبيرة ليا وللـ Clients بتوعي.
+ساعدتني أتواصل مع أجزاء جوايا كنت برفضها، وده خلاني أتحرر من مخاوفي بسهولة وأنا مستمتعة.
+
+الشغل على النفس بالنية والوعي خلّى التطور يحصل فعلاً في وقت قصير، والمقاومة قلت بشكل ملحوظ.
+الـ Clients طبقوا التمارين بسهولة وحققنا نتايج قوية.
+
+الدبلومة عميقة جدًا، والتكنيكات فيها قدرت أطورها وستخدمتُها بنجاح.
+الحمد لله، اتحققت أهدافي… وأنا مبسوطة جدًا! 💖"</p>
+    </div>
+    <div class="slide">
+      <img src="https://i.postimg.cc/mD5j0q1p/Screenshot-2025-07-06-021343.png" alt="User" />
+      <p>"من أجمل التجارب التي أقدمت عليها و قد أصبت الاختيار عندما قررت ان تكون من خلالكم.
+تجربة ممتعة وثرية مليئة بالمشاعر أدركت من خلالها وخلال التقنيات المختلفة كيفية تحرير الشعور وكيفية نكون قريبين من أنفسنا قبل أن نمارس ذلك مع الآخرين.
+والتي أثرت في (عيش التجربة بالنسبة لي كانت من أهم الركائز الأساسية في الكورس)،
+كثير وأحببتها.
+وتم تقديمها بكل احترافية ومهارة."</p>
+    </div>
+    <div class="slide">
+      <img src="https://i.postimg.cc/Mp6sfywD/Screenshot-2025-07-06-021733.png" alt="User" />
+      <p>"تجربة ممتعة جدًا بالنسبالي،
+كنت محتاجة طريقة أعبّر بيها عن نفسي وعن مشاعري من غير ما أتكلم كتير، ومن غير ما أعد أفكر وأفسر وأحلل،
+art Therapy
+اداني الفرصة دي، حسّيت بالعفوية والتلقائية في تعاملي مع الألوان.
+
+غير إن الكورس لمس الجزء الطفولي اللي جوايا، لأنّي من زمان بحب الألوان وبشوف فيها بهجة الحياة. حسّيت بمتعة وفرحة وأنا بلون بحرية بدون قيود وشروط"</p>
+    </div>
+    <div class="slide">
+      <img src="https://i.postimg.cc/PJHbsjr4/Screenshot-2025-07-06-021954.png" alt="User" />
+      <p>"دبلومة Art Theraby من اجمل الكورسات اللي فادتني انا شخصيا في اذاي اعرف شعوري واتعامل معاه عن طريق الالوان والاحساس باللون وتأثيره علي تفريغ المشاعر من الم او غضب وغيره من المشاعر وكيفية تحرير الصدمة المخزنة بالجسم من سنين طويلة أو الصدمة الحالية لحد ما اوصل للتشافي والتنكنيك في الكورس من السماحية بالتحدث واعطاء الفرصة كاملة للتعبير عن مابداخلنا من الحاجات التحفة بجد وجهد صراحة كبير وجميل من المدربين.
+"</p>
+    </div>
+  </div>
+</div>
+
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://facebook.com/radwa.abobakr3" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/radwaaabubakr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com/radwa_abubakr" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/201012147242" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showNextSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }
+
+  setInterval(showNextSlide, 4000);
+</script>
+
+</body>
+</html>

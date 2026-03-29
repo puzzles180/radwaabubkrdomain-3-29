@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radwa abubkr acadmey</title>
+
+</head>
+<body>
+<style>/* ================= Root Colors ================= */
+:root {
+  --orange-main: #F4A261;
+  --orange-light: #FFF1E6;
+  --orange-dark: #E76F51;
+  --brown-soft: #6D4C41;
+}
+
+/* ================= Reset ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cairo, Arial, sans-serif;
+}
+
+body {
+  direction: inherit;
+  background: #fff;
+}
+
+/* ================= Top Bar ================= */
+.top-bar {
+  background: var(--orange-light);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang a {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--brown-soft);
+  transition: 0.25s;
+}
+
+.lang a.active {
+  background: rgba(244,162,97,0.35);
+  color: var(--orange-dark);
+  font-weight: 600;
+}
+
+.lang a:hover {
+  background: rgba(244,162,97,0.25);
+}
+
+/* ================= Header ================= */
+.header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--orange-dark);
+}
+
+/* ================= Desktop Nav ================= */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--brown-soft);
+  position: relative;
+}
+
+/* underline RTL / LTR */
+html[dir="ltr"] .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--orange-main);
+  transition: 0.3s;
+}
+
+html[dir="rtl"] .nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--orange-main);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ================= Desktop Dropdown ================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--brown-soft);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+html[dir="ltr"] .dropdown-menu {
+  left: 0;
+}
+
+html[dir="rtl"] .dropdown-menu {
+  right: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--brown-soft);
+}
+
+.dropdown-menu a:hover {
+  background: var(--orange-light);
+}
+
+/* ================= Search ================= */
+.search input {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--orange-main);
+}
+
+/* ================= Hamburger ================= */
+.hamburger {
+  display: none;
+  width: 30px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  background: var(--orange-dark);
+  border-radius: 4px;
+}
+
+/* ================= Overlay ================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 90;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= Side Menu ================= */
+.side-menu {
+  position: fixed;
+  top: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff7f0;
+  padding: 20px;
+  transition: 0.35s ease;
+  z-index: 100;
+}
+
+/* RTL */
+html[dir="rtl"] .side-menu {
+  right: 0;
+  transform: translateX(100%);
+}
+
+html[dir="rtl"] .side-menu.active {
+  transform: translateX(0);
+}
+
+/* LTR */
+html[dir="ltr"] .side-menu {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+html[dir="ltr"] .side-menu.active {
+  transform: translateX(0);
+}
+
+/* Side header */
+.side-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--orange-dark);
+}
+
+/* ================= Side Nav ================= */
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.side-nav a,
+.nav-btn {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--brown-soft);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.25s;
+  text-decoration: none;
+}
+
+html[dir="ltr"] .side-nav a,
+html[dir="ltr"] .nav-btn {
+  text-align: left;
+}
+
+html[dir="rtl"] .side-nav a,
+html[dir="rtl"] .nav-btn {
+  text-align: right;
+}
+
+.side-nav a:hover,
+.nav-btn:hover {
+  background: rgba(244,162,97,0.2);
+  color: var(--orange-dark);
+}
+
+/* Dropdown in Side Menu */
+.nav-sub {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: max-height 0.3s ease;
+}
+
+html[dir="rtl"] .nav-sub {
+  margin-right: 12px;
+}
+
+html[dir="ltr"] .nav-sub {
+  margin-left: 12px;
+}
+
+.nav-group.open .nav-sub {
+  max-height: 300px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.nav-group.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .nav,
+  .search {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+.logo img {
+  height: 100px;        /* غير المقاس زي ما تحب */
+  width: auto;
+  display: block;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Arrows ===== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.75);
+  cursor: pointer;
+  z-index: 10;
+  transition: all .3s ease;
+}
+
+.arrow:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Left & Right */
+.prev { left: 25px; }
+.next { right: 25px; }
+
+/* Arrow icons */
+.prev::before,
+.next::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: solid #333;
+  border-width: 0 3px 3px 0;
+  margin: auto;
+}
+
+.prev::before {
+  transform: rotate(135deg);
+}
+
+.next::before {
+  transform: rotate(-45deg);
+}
+
+/* Arrows positions */
+.prev {
+  left: 10px;       /* أقصى شمال */
+}
+
+.next {
+  right: 10px;      /* أقصى يمين */
+}
+
+/* اختياري – مسافة أمان للموبايل */
+@media (max-width: 768px) {
+  .prev {
+    left: 6px;
+  }
+
+  .next {
+    right: 6px;
+  }
+}
+
+.arrow {
+  opacity: 0;
+}
+
+.hero-slider:hover .arrow {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+  }
+
+  /* الصورة فوق */
+  .profile-image {
+    order: -1;
+  }
+
+  /* الكلام تحت */
+  .profile-text {
+    order: 1;
+  }
+}
+/* الوضع قبل الظهور */
+.reveal {
+  opacity: 0;
+  transition: all 0.9s ease;
+}
+
+/* اتجاه الحركة */
+.from-left {
+  transform: translateX(-60px);
+}
+
+.from-right {
+  transform: translateX(60px);
+}
+
+/* تأخير للصورة */
+.delay {
+  transition-delay: 0.3s;
+}
+
+/* بعد الظهور */
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* =====================
+   ROOT COLORS
+===================== */
+:root {
+  --orange: #F28C28;
+  --arch-color: #F4E6D8;
+}
+
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background: #ffffff;
+  color: #111;
+}
+
+/* =====================
+   SECTION
+===================== */
+.profile-section {
+  position: relative;
+  padding: 120px 20px;
+  overflow: hidden;
+}
+
+/* =====================
+   BACKGROUND LINES
+===================== */
+.profile-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='1200' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200 Q300 100 600 200 T1200 200' fill='none' stroke='%23F28C28' stroke-width='1'/%3E%3Cpath d='M0 400 Q300 300 600 400 T1200 400' fill='none' stroke='%23F28C28' stroke-width='1'/%3E%3Cpath d='M0 600 Q300 500 600 600 T1200 600' fill='none' stroke='%23F28C28' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: cover;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* =====================
+   CONTENT
+===================== */
+.profile-content {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  z-index: 1;
+}
+
+/* =====================
+   TEXT
+===================== */
+.profile-text {
+  flex: 1;
+}
+
+.profile-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.profile-text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #222;
+}
+
+/* =====================
+   ARCH (SMALLER)
+===================== */
+.profile-image {
+  width: 340px;
+  height: 420px;
+  background: var(--arch-color);
+  border-radius: 200px 200px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =====================
+   IMAGE BIGGER & OUTSIDE
+===================== */
+.profile-image img {
+  width: 120%;
+  position: absolute;
+  left: -10%;
+  top: -70px; /* الدماغ طالع لبرا بوضوح */
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 260px;
+    height: 340px;
+  }
+
+  .profile-image img {
+    width: 125%;
+    left: -12%;
+    top: -60px;
+  }
+  
+</style>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <span>Radwa Abu Bakr Academy – Step by step on your journey </span>
+  <div class="lang">
+    <a href="index.html">العربية</a> / 
+    <a href="#" class="active">ENGLISH</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-container">
+
+    <!-- Hamburger (Mobile) -->
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Logo -->
+  <div class="logo">
+  <img src="غخغخغ-removebg-preview.png" alt="Logo">
+</div>
+
+
+    <!-- Desktop Nav -->
+    <nav class="nav">
+
+      <a href="#" class="nav-link">Home</a>
+
+      <div class="dropdown">
+        <button class="dropdown-btn" type="button">
+          Courses <span>▾</span>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#">Foundation Diploma</a>
+          <a href="#">Advanced Diploma</a>
+          <a href="#">Discovery Workshop</a>
+          <a href="#">Art of Connection Workshop</a>
+          <a href="#">Art of Soul Workshop</a>
+          <a href="#">Alwan el wed</a>
+
+        </div>
+      </div>
+
+      <a href="#" class="nav-link">About Radwa</a>
+      <a href="#" class="nav-link">FAQs</a>
+      <a href="#" class="nav-link">Contact Us</a>
+
+    </nav>
+
+    <!-- Search -->
+    <div class="search">
+      <input type="text" placeholder="Search">
+    </div>
+
+  </div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- Side Menu (Mobile) -->
+<aside class="side-menu" id="sideMenu">
+
+  <div class="side-header">
+
+    <button class="close-btn" onclick="toggleMenu()" aria-label="Close Menu">✕</button>
+  </div>
+
+  <nav class="side-nav">
+
+    <a href="#" class="nav-link">Home</a>
+
+    <div class="nav-group">
+      <button class="nav-btn side-drop-btn" type="button">
+        Courses
+        <span class="arrow">▾</span>
+      </button>
+
+      <div class="nav-sub">
+        <a href="#">Foundation Diploma</a>
+          <a href="#">Advanced Diploma</a>
+          <a href="#">Discovery Workshop</a>
+          <a href="#">Art of Connection Workshop</a>
+          <a href="#">Art of Soul Workshop</a>
+          <a href="#">Alwan el wed</a>
+      </div>
+    </div>
+
+    <a href="#" class="nav-link">About Radwa</a>
+    <a href="#" class="nav-link">FAQs</a>
+    <a href="#" class="nav-link">Contact Us</a>
+
+  </nav>
+</aside>
+<section class="hero-slider">
+
+  <div class="slides">
+
+    <a href="course1.html" class="slide active">
+      <img src="img/slide1.jpg" alt="">
+    </a>
+
+    <a href="course2.html" class="slide">
+      <img src="img/slide2.jpg" alt="">
+    </a>
+
+    <a href="course3.html" class="slide">
+      <img src="img/slide3.jpg" alt="">
+    </a>
+
+    <a href="course4.html" class="slide">
+      <img src="img/slide4.jpg" alt="">
+    </a>
+
+    <a href="course5.html" class="slide">
+      <img src="img/slide5.jpg" alt="">
+    </a>
+
+  </div>
+
+  <!-- Arrows -->
+  <button class="arrow prev" aria-label="Previous"></button>
+  <button class="arrow next" aria-label="Next"></button>
+
+</section>
+
+<section class="profile-section">
+
+  <div class="profile-content">
+
+    <!-- TEXT -->
+    <div class="profile-text reveal from-left">
+      <h2>عن أحمد عمارة</h2>
+      <p>
+        أن للمراد أن يخرج من قمقمه ولن يوقفه شيء على وجه الأرض.
+        منذ اللحظة التي أدرك فيها أن مسؤوليته تقع على عاتقه،
+        انطلق في رحلة البحث عن أسرار تذوق النعيم في الحياة.
+      </p>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="profile-image reveal from-right delay">
+      <img src="WhatsApp_Image_2025-12-19_at_1.40.20_PM-removebg-preview.png" alt="Ahmed Emara">
+    </div>
+
+  </div>
+
+</section>
+<section class="fc-slider" dir="ltr">
+
+  <h2 class="fc-title">Featured Courses</h2>
+
+  <div class="fc-slider-wrapper">
+
+    <!-- Arrow Left -->
+    <button class="fc-arrow fc-prev">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <!-- Slider Track -->
+    <div class="fc-track">
+
+      <!-- Course 1 -->
+      <div class="fc-slide">
+        <div class="fc-image">
+          <img src="https://i.postimg.cc/zv4yq9FJ/course1.png">
+        </div>
+
+        <div class="fc-content">
+          <h3>Addicted to Success</h3>
+          <p>
+            Turn addiction into real success, enjoy true motivation,
+            purposeful striving, and live an enjoyable journey of success.
+          </p>
+
+          <a href="#" class="fc-read">Read more</a>
+
+          <div class="fc-price-icons">
+            <span class="fc-price">$299</span>
+
+            <div class="fc-icons">
+              <i class="fa-regular fa-bookmark"></i>
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+          </div>
+
+          <button class="fc-btn">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="fc-slide">
+        <div class="fc-image">
+          <img src="https://i.postimg.cc/ZR7v6XJp/course2.png">
+        </div>
+
+        <div class="fc-content">
+          <h3>Power of Focus</h3>
+          <p>
+            Learn how to control your focus, boost productivity,
+            and achieve your goals with consistency.
+          </p>
+
+          <a href="#" class="fc-read">Read more</a>
+
+          <div class="fc-price-icons">
+            <span class="fc-price">$199</span>
+
+            <div class="fc-icons">
+              <i class="fa-regular fa-bookmark"></i>
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+          </div>
+
+          <button class="fc-btn">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="fc-slide">
+        <div class="fc-image">
+          <img src="https://i.postimg.cc/sXx9KXg4/course3.png">
+        </div>
+
+        <div class="fc-content">
+          <h3>Habit Building</h3>
+          <p>
+            Change your daily habits and start a new life
+            full of achievements and growth.
+          </p>
+
+          <a href="#" class="fc-read">Read more</a>
+
+          <div class="fc-price-icons">
+            <span class="fc-price">$249</span>
+
+            <div class="fc-icons">
+              <i class="fa-regular fa-bookmark"></i>
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+          </div>
+
+          <button class="fc-btn">Buy Now</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Arrow Right -->
+    <button class="fc-arrow fc-next">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+  </div>
+
+  <!-- Dots -->
+  <div class="fc-dots"></div>
+
+</section>
+
+<script>
+
+
+// ===============================
+// فتح وقفل الـ Side Menu
+// ===============================
+function toggleMenu() {
+  const sideMenu = document.getElementById("sideMenu");
+  const overlay = document.getElementById("overlay");
+
+  sideMenu.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
+// ===============================
+// Dropdown في الـ Side Menu (الدورات)
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownBtns = document.querySelectorAll(".nav-btn");
+
+  dropdownBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      const parent = btn.closest(".nav-group");
+      if (!parent) return;
+
+      parent.classList.toggle("open");
+    });
+  });
+});
+
+
+</script>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  }
+
+  next.addEventListener('click', nextSlide);
+  prev.addEventListener('click', prevSlide);
+
+  setInterval(nextSlide, 5000);
+</script>
+
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+<script>
+  const fcSection = document.querySelector('.fc-slider');
+const fcTrack = fcSection.querySelector('.fc-track');
+const fcSlides = fcSection.querySelectorAll('.fc-slide');
+const fcNext = fcSection.querySelector('.fc-next');
+const fcPrev = fcSection.querySelector('.fc-prev');
+const fcDotsWrap = fcSection.querySelector('.fc-dots');
+
+let fcIndex = 0;
+
+/* Create dots */
+fcSlides.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.addEventListener('click', () => goSlide(i));
+  fcDotsWrap.appendChild(dot);
+});
+
+const fcDots = fcDotsWrap.querySelectorAll('span');
+
+function updateSlider() {
+  fcTrack.style.transform = `translateX(${fcIndex * 100}%)`;
+  fcDots.forEach(d => d.classList.remove('active'));
+  fcDots[fcIndex].classList.add('active');
+}
+
+function goSlide(i) {
+  fcIndex = i;
+  updateSlider();
+}
+
+fcNext.onclick = () => {
+  fcIndex = (fcIndex + 1) % fcSlides.length;
+  updateSlider();
+};
+
+fcPrev.onclick = () => {
+  fcIndex = (fcIndex - 1 + fcSlides.length) % fcSlides.length;
+  updateSlider();
+};
+
+/* Auto Play */
+setInterval(() => {
+  fcIndex = (fcIndex + 1) % fcSlides.length;
+  updateSlider();
+}, 5000);
+
+updateSlider();
+</script>
+
+</body>
+</html>
